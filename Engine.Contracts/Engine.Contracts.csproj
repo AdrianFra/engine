@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A9140007-C3AE-4DCE-A75C-407031CC5481}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine.Contracts</RootNamespace>
+    <AssemblyName>Engine.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animation\IAnimated360DegreeTextureLoader.cs" />
+    <Compile Include="Animation\IRenderedRotationCalculator.cs" />
+    <Compile Include="Animation\ITextureByAnimationPercentSelector.cs" />
+    <Compile Include="Animation\ITextureSequenceSelector.cs" />
+    <Compile Include="Animation\RotationDegrees.cs" />
+    <Compile Include="Animation\SelectedTextureSequence.cs" />
+    <Compile Include="Animation\TextureSequence.cs" />
+    <Compile Include="Animation\TextureSequence360Degree.cs" />
+    <Compile Include="IFontMapper.cs" />
+    <Compile Include="IFontRenderer.cs" />
+    <Compile Include="IGameTimeProvider.cs" />
+    <Compile Include="Input\IPressedKeyEncapsulator.cs" />
+    <Compile Include="IParticleContainer.cs" />
+    <Compile Include="IPercentProvider.cs" />
+    <Compile Include="ISpriteRenderer.cs" />
+    <Compile Include="Models\IModelInstanceRenderer.cs" />
+    <Compile Include="Models\IModelLoader.cs" />
+    <Compile Include="Models\ModelInstance.cs" />
+    <Compile Include="PlayerMotion\IVehicle.cs" />
+    <Compile Include="PlayerMotion\IVehicleExitPositionFinder.cs" />
+    <Compile Include="PlayerMotion\IVehicleRepository.cs" />
+    <Compile Include="Models\ICuboidWithModelsTester.cs" />
+    <Compile Include="Models\ICuboidWithWorldTester.cs" />
+    <Compile Include="Models\IModelContainer.cs" />
+    <Compile Include="Models\IComplexShapeProvider.cs" />
+    <Compile Include="Models\IFieldModelLoader.cs" />
+    <Compile Include="Models\IModelQueue.cs" />
+    <Compile Include="Models\IRayWithModelsTester.cs" />
+    <Compile Include="Models\ModelInstanceDescription.cs" />
+    <Compile Include="IBoolProvider.cs" />
+    <Compile Include="IFieldChangeObserver.cs" />
+    <Compile Include="IFieldChangeAnalyzer.cs" />
+    <Compile Include="IMeshUnitCollection.cs" />
+    <Compile Include="IMeshUnitCreator.cs" />
+    <Compile Include="Models\IModelRepository.cs" />
+    <Compile Include="Input\IAbsoluteMousePositionProvider.cs" />
+    <Compile Include="IFrameTimeProvider.cs" />
+    <Compile Include="Input\IKeyMapper.cs" />
+    <Compile Include="Input\IMouseButtonEventProvider.cs" />
+    <Compile Include="Input\IMousePositionController.cs" />
+    <Compile Include="Input\MovementInstruction.cs" />
+    <Compile Include="PlayerMotion\IPlayerMotionEncapsulator.cs" />
+    <Compile Include="PlayerMotion\IPlayerPositionProvider.cs" />
+    <Compile Include="PlayerMotion\IPlayerViewDirectionProvider.cs" />
+    <Compile Include="Input\IPressedKeyDetector.cs" />
+    <Compile Include="Input\Keys.cs" />
+    <Compile Include="Input\MouseButtonEvents.cs" />
+    <Compile Include="Input\MousePosition.cs" />
+    <Compile Include="Input\MousePositionDelta.cs" />
+    <Compile Include="PlayerMotion\IPlayerViewRayProvider.cs" />
+    <Compile Include="IPositionFilter.cs" />
+    <Compile Include="IPositionGenerator.cs" />
+    <Compile Include="IVertexByFieldCreator.cs" />
+    <Compile Include="Models\EditorModel.cs" />
+    <Compile Include="Models\Model.cs" />
+    <Compile Include="Models\ModelRenderUnit.cs" />
+    <Compile Include="Models\Submodel.cs" />
+    <Compile Include="PlayerMotion\IReboundMotionCalculator.cs" />
+    <Compile Include="PlayerMotion\IVehicleClimber.cs" />
+    <Compile Include="PlayerMotion\IVehicleManager.cs" />
+    <Compile Include="PlayerMotion\IVehicleMotionCalculator.cs" />
+    <Compile Include="PlayerMotion\IVehicleUsageObserver.cs" />
+    <Compile Include="PlayerMotion\IWalkPositionCalculator.cs" />
+    <Compile Include="PlayerMotion\ReboundMotion.cs" />
+    <Compile Include="PlayerMotion\WalkMotion.cs" />
+    <Compile Include="PlayerMotion\VehicleMotion.cs" />
+    <Compile Include="PlayerMotion\Vehicle.cs" />
+    <Compile Include="IRenderingElement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Graphics.Contracts\Graphics.Contracts.csproj">
+      <Project>{a13c5a44-3305-4bd0-9d83-5106a360c30f}</Project>
+      <Name>Graphics.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\World.Model\World.Model.csproj">
+      <Project>{38a22d00-9fc4-4dcb-8246-9f6cc26446fb}</Project>
+      <Name>World.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

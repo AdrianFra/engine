@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{386A8C51-2B65-4FF5-9EB9-48C28E8A3862}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Game</RootNamespace>
+    <AssemblyName>Game</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="OpenTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenTK.2.0.0\lib\net20\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LoopCreator.cs" />
+    <Compile Include="OpenTkDependencies\AbsoluteMousePositionProvider.cs" />
+    <Compile Include="OpenTkDependencies\MousePositionController.cs" />
+    <Compile Include="OpenTkDependencies\MouseButtonEventProvider.cs" />
+    <Compile Include="OpenTkDependencies\PressedKeyDetector.cs" />
+    <Compile Include="OpenTkDependencies\Window.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenshotMaker.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="OpenTK.dll.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Character.Animation\Character.Animation.csproj">
+      <Project>{8d998f8c-9eb2-4a67-bb3c-c2fee28f4061}</Project>
+      <Name>Character.Animation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Engine.Contracts\Engine.Contracts.csproj">
+      <Project>{a9140007-c3ae-4dce-a75c-407031cc5481}</Project>
+      <Name>Engine.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Engine.Framework\Engine.Framework.csproj">
+      <Project>{fb4eb763-0c1a-4ae2-8f6c-9eb82800277d}</Project>
+      <Name>Engine.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Graphics.Contracts\Graphics.Contracts.csproj">
+      <Project>{a13c5a44-3305-4bd0-9d83-5106a360c30f}</Project>
+      <Name>Graphics.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Graphics\Graphics.csproj">
+      <Project>{96b83948-e522-4ffd-b3e6-93d4080288fe}</Project>
+      <Name>Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Landscape.Rendering\Landscape.Rendering.csproj">
+      <Project>{13a34020-5f95-4872-a988-8f1c926b50f6}</Project>
+      <Name>Landscape.Rendering</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Math.Contracts\Math.Contracts.csproj">
+      <Project>{7b59ee89-ef4c-47da-8d9a-9c437b943893}</Project>
+      <Name>Math.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Math\Math.csproj">
+      <Project>{f0129e9c-f6ea-440e-95fa-0ff9a78d3c7f}</Project>
+      <Name>Math</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sound.Contracts\Sound.Contracts.csproj">
+      <Project>{83c3f491-7792-4f4f-9d86-9b540707667e}</Project>
+      <Name>Sound.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sound\Sound.csproj">
+      <Project>{577ccce9-cd97-4bd7-a29e-d23a6665c57b}</Project>
+      <Name>Sound</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\World.Model\World.Model.csproj">
+      <Project>{38A22D00-9FC4-4DCB-8246-9F6CC26446FB}</Project>
+      <Name>World.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
